@@ -6,6 +6,11 @@ export default function Body() {
   const [input, setInput] = useState("");
   const [gameList, setGameList] = useState([])
   
+function resetField(fieldId){
+    document.getElementById(fieldId).value='';
+    setInput('');
+}
+
   function handleInputChange(value) {
     setInput(value);
   }
@@ -17,12 +22,14 @@ export default function Body() {
   function handleSubmit() {
     console.log(input);
     setGameList([...gameList, input])
+    resetField('game')
+    
   }
 
 
 
   return (
-    <main className="grid grid-cols-2 gap-2">
+    <main className="flex flex-row">
       <UserInput
         onGameSubmit={handleSubmit}
         onInputChange={handleInputChange}

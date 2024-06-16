@@ -4,11 +4,12 @@ export default function UserInput({onGameSubmit, onInputChange}) {
     function handleEnterKey(e){
         if (e.key === 'Enter'){
             onGameSubmit()
+            document.getElementById('game').value='';
         }
       }
 
   return (
-    <section className='outline-dashed'>
+    <section className='outline-dashed bg-gradient-to-b from-slate-700 flex-auto '>
       <label htmlFor="game"></label>
       <input
         type="text"
