@@ -21,8 +21,11 @@ function resetField(fieldId){
 
   function handleSubmit() {
     console.log(input);
+    if(input.trim() === ""){
+      return
+    } else {
     setGameList([...gameList, input])
-    resetField('game')
+    resetField('game')}
     
   }
 
